@@ -8,7 +8,7 @@ GLFWwindow* rgbCreateWindow(int width, int height)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "GLFW Window", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(width, height, "GLFW Window", NULL, NULL);
 
     if (!window) {
         glfwTerminate();
