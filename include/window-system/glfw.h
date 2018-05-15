@@ -1,0 +1,1 @@
+int rgbCreateWindow(int, int);
