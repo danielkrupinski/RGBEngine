@@ -1,7 +1,7 @@
 #include <GLFW/glfw3.h>
 #include "window-system/glfw.h"
 
-int rgbCreateWindow(int width, int height)
+GLFWwindow* rgbCreateWindow(int width, int height)
 {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -12,9 +12,9 @@ int rgbCreateWindow(int width, int height)
 
     if (!window) {
         glfwTerminate();
-        return -1;
+        return window;
     }
 
     glfwMakeCurentContext(window);
-    return 0;
+    return window;
 }
