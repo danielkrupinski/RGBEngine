@@ -1,4 +1,5 @@
 #include "engine.h"
+#include <stdio.h>
 
 void rgbInit()
 {
