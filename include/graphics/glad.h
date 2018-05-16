@@ -1,0 +1,4 @@
+#ifndef RGBE_GRAPHICS_GLAD_H
+#define RGBE_GRAPHICS_GLAD_H
+
+#endif // RGBE_GRAPHICS_GLAD_H
