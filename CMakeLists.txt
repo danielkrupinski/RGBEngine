@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
-project(RGB Engine)
+project(RGBEngine)
 
 set(CMAKE_BUILD_TYPE Release)
 
@@ -9,5 +9,5 @@ file(GLOB SOURCES "src/*.c")
 set(CMAKE_C_FLAGS_RELEASE "-std=c11 -m64 -Ofast -flto -march=native -funroll-loops -fno-builtin")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
-add_executable(RGB Engine ${SOURCES})
-target_link_libraries(RGB Engine glfw GL)
+add_executable(RGBEngine ${SOURCES})
+target_link_libraries(RGBEngine glfw GL)
