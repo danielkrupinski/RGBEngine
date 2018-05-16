@@ -3,4 +3,6 @@
 
 void initializeGraphics(void);
 
+void graphicsRender(void);
+
 #endif // RGBE_GRAPHICS_H
