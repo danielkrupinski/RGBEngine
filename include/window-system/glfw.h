@@ -1,1 +1,0 @@
-GLFWwindow* rgbCreateWindow(int, int);
