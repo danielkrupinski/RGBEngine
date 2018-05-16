@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stdio.h>
+#include "graphics/window.h"
 
 void graphicsCreateWindow(void)
 {
