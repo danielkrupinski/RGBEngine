@@ -1,5 +1,7 @@
 #include "engine.h"
 
+bool isRunning;
+
 void initializeEngine(void)
 {
     initializeGraphics();
