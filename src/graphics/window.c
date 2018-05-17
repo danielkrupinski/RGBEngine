@@ -18,5 +18,5 @@ void graphicsCreateWindow(void)
         exit(1);
     }
 
-    glfwMakeCurrentContext(window);
+    glfwMakeContextCurrent(window);
 }
