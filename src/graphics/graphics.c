@@ -12,8 +12,10 @@ void initializeGraphics(void)
 void renderGraphics(double currentTime)
 {
     if (!glfwWindowShouldClose(window)) {
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        const GLfloat color[] = { (float)sin(currentTime) * 0.5f + 0.5f,
+                                  (float)cos(currentTime) * 0.5f + 0.5f,
+                                  0.0f, 1.0f };
+        glClearBufferfv(GL_COLOR, 0, color);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
