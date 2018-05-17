@@ -18,3 +18,8 @@ void renderGraphics(void)
     else
         isRunning = false;
 }
+
+void shutdownGraphics(void)
+{
+    glfwTerminate();
+}
