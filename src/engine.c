@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include "engine.h"
 
 bool isRunning;
