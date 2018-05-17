@@ -5,7 +5,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 include_directories(include)
 
-file(GLOB SOURCES "src/*.c")
+file(GLOB_RECURSE SOURCES "src/*.c")
 set(CMAKE_C_FLAGS_RELEASE "-std=c11 -m64 -Ofast -flto -march=native -funroll-loops -fno-builtin")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
