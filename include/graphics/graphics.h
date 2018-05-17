@@ -2,8 +2,8 @@
 #define RGBE_GRAPHICS_H
 
 #include <stdbool.h>
-#include "graphics/glad.h"
-#include "graphics/window.h"
+#include "glad.h"
+#include "window.h"
 
 void initializeGraphics(void);
 
