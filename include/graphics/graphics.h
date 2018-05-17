@@ -9,4 +9,6 @@ void initializeGraphics(void);
 
 void renderGraphics(void);
 
+void shutdownGraphics(void);
+
 #endif // RGBE_GRAPHICS_H
