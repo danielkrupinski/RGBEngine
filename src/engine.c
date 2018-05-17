@@ -7,6 +7,8 @@ void initializeEngine(void)
 
 void runEngine(void)
 {
-    while (true)
-        renderGraphics();
+    while(!glfwWindowShouldClose(window)) {
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
 }
