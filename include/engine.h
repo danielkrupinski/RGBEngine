@@ -1,7 +1,6 @@
 #ifndef RGBE_ENGINE_H
 #define RGBE_ENGINE_H
 
-#include <stdio.h>
 #include "graphics/graphics.h"
 
 bool isRunning;
