@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include "graphics/graphics.h"
 
 extern bool isRunning;

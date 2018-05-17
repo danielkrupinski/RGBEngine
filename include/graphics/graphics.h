@@ -1,7 +1,6 @@
 #ifndef RGBE_GRAPHICS_H
 #define RGBE_GRAPHICS_H
 
-#include <stdbool.h>
 #include "glad.h"
 #include "window.h"
 
