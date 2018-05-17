@@ -3,12 +3,12 @@
 void initializeEngine(void)
 {
     initializeGraphics();
+    isRunning = true;
 }
 
 void runEngine(void)
 {
-    while(!glfwWindowShouldClose(window)) {
-        glfwSwapBuffers(window);
-        glfwPollEvents();
+    while (isRunning) {
+        renderGraphics();
     }
 }

@@ -1,5 +1,7 @@
 #include "graphics/graphics.h"
 
+extern bool isRunning;
+
 void initializeGraphics(void)
 {
     graphicsCreateWindow();
@@ -9,5 +11,10 @@ void initializeGraphics(void)
 
 void renderGraphics(void)
 {
-    
+    if (!glfwWindowShouldClose(window)) {
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+    else
+        isRunning = false;
 }
