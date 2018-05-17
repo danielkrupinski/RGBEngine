@@ -1,3 +1,4 @@
+#include <glad/glad.h>
 #include <math.h>
 #include <stdbool.h>
 #include "graphics/graphics.h"
