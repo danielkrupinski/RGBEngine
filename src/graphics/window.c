@@ -11,7 +11,7 @@ void graphicsCreateWindow(void)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    window = glfwCreateWindow(800, 600, "OpenGL 4.6 Window", NULL, NULL);
+    window = glfwCreateWindow(800, 600, "RGBEngine", NULL, NULL);
 
     if (!window) {
         fprintf(stderr, "Failed to create GLFW window!");
