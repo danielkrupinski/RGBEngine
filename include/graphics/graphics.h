@@ -7,7 +7,7 @@
 
 void initializeGraphics(void);
 
-void renderGraphics(void);
+void renderGraphics(double);
 
 void shutdownGraphics(void);
 

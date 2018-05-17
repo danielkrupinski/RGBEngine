@@ -9,7 +9,7 @@ void initializeGraphics(void)
     glViewport(0, 0, 800, 600);
 }
 
-void renderGraphics(void)
+void renderGraphics(double currentTime)
 {
     if (!glfwWindowShouldClose(window)) {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
