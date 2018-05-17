@@ -1,6 +1,6 @@
 #include <glad/glad.h>
-#include "graphics/glad.h"
 #include <stdio.h>
+#include "graphics/glad.h"
 
 void graphicsInitializeGlad(void)
 {
