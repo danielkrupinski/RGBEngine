@@ -4,3 +4,9 @@ void initializeEngine(void)
 {
     initializeGraphics();
 }
+
+void runEngine(void)
+{
+    while (true)
+        renderGraphics();
+}
