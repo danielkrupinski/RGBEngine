@@ -9,6 +9,6 @@ void initializeEngine(void)
 void runEngine(void)
 {
     while (isRunning) {
-        renderGraphics();
+        renderGraphics(glfwGetTime());
     }
 }
