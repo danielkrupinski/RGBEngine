@@ -3,6 +3,8 @@
 
 #include "graphics/graphics.h"
 
+bool isRunning;
+
 void initializeEngine(void);
 void runEngine(void);
 
