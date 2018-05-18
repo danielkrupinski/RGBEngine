@@ -21,3 +21,8 @@ void graphicsCreateWindow(void)
 
     glfwMakeContextCurrent(window);
 }
+
+void graphicsResizeWindow(GLFWwindow* window, int width, int height)
+{
+
+}
