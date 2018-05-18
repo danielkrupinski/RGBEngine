@@ -14,7 +14,7 @@ void graphicsCreateWindow(void)
     window = glfwCreateWindow(800, 600, "RGBEngine", NULL, NULL);
 
     if (!window) {
-        fprintf(stderr, "Failed to create GLFW window!");
+        fprintf(stderr, "Failed to create GLFW window!\n");
         glfwTerminate();
         exit(1);
     }
