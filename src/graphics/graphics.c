@@ -5,12 +5,14 @@
 
 extern bool isRunning;
 GLuint renderingProgram;
+GLuint vertexArrayObject;
 
 void initializeGraphics(void)
 {
     graphicsCreateWindow();
     graphicsInitializeGlad();
     glViewport(0, 0, 800, 600);
+    renderingProgram = graphicsCompileShaders();
 }
 
 void renderGraphics(double currentTime)
