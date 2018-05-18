@@ -20,6 +20,7 @@ void graphicsCreateWindow(void)
     }
 
     glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, graphicsResizeWindow); 
 }
 
 void graphicsResizeWindow(GLFWwindow* window, int width, int height)
