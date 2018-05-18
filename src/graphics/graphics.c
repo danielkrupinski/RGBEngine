@@ -4,6 +4,7 @@
 #include "graphics/graphics.h"
 
 extern bool isRunning;
+GLuint renderingProgram;
 
 void initializeGraphics(void)
 {
