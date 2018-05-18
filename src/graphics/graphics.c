@@ -20,13 +20,10 @@ void initializeGraphics(void)
 void renderGraphics(double currentTime)
 {
     if (!glfwWindowShouldClose(window)) {
-        const GLfloat color[] = { (float)sin(currentTime) * 0.5f + 0.5f,
-                                  (float)cos(currentTime) * 0.5f + 0.5f,
-                                  0.0f, 1.0f };
+        const GLfloat color[] = { 0.0f, 0.2f, 0.0f, 1.0f };
         glClearBufferfv(GL_COLOR, 0, color);
-        glPointSize(40.0f);
         glUseProgram(renderingProgram);
-        glDrawArrays(GL_POINTS, 0, 1);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
