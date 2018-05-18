@@ -3,12 +3,15 @@
 GLuint graphicsCompileShaders(void)
 {
     static const GLchar* vertexShaderSource[] = {
-        "#version 460 core                              \n"
-        "                                               \n"
-        "void main(void)                                \n"
-        "{                                              \n"
-        "   gl_Position = vec4(0.0, 0.0, 0.5, 1.0);     \n"
-        "}                                              \n"
+        "#version 460 core                                                      \n"
+        "                                                                       \n"
+        "void main(void)                                                        \n"
+        "{                                                                      \n"
+        "   const vec4 vertices[3] = vec4[3](vec4(0.25, -0.25, 0.5, 1.0),       \n"
+        "                                     vec4(-0.25, -0.25, 0.5, 1.0),     \n"
+        "                                     vec4(0.25, 0.25, 0.5, 1.0));      \n"
+        "   gl_Position = vertices[gl_VertexID];                                \n"
+        "}                                                                      \n"
     };
 
     static const GLchar* fragmentShaderSource[] = {
