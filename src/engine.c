@@ -14,4 +14,5 @@ void runEngine(void)
     while (isRunning) {
         renderGraphics(glfwGetTime());
     }
+    shutdownGraphics();
 }
