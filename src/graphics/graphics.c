@@ -24,7 +24,9 @@ void renderGraphics(double currentTime)
                                   (float)cos(currentTime) * 0.5f + 0.5f,
                                   0.0f, 1.0f };
         glClearBufferfv(GL_COLOR, 0, color);
+        glPointSize(40.0f);
         glUseProgram(renderingProgram);
+        glDrawArrays(GL_POINTS, 0, 1);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
