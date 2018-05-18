@@ -6,5 +6,6 @@
 GLFWwindow* window;
 
 void graphicsCreateWindow(void);
+void graphicsResizeWindow(void);
 
 #endif // RGBE_GRAPHICS_WINDOW_H
