@@ -13,6 +13,8 @@ void initializeGraphics(void)
     graphicsInitializeGlad();
     glViewport(0, 0, 800, 600);
     renderingProgram = graphicsCompileShaders();
+    glCreateVertexArrays(1, &vertexArrayObject);
+    glBindVertexArray(vertexArrayObject);
 }
 
 void renderGraphics(double currentTime)
@@ -31,5 +33,7 @@ void renderGraphics(double currentTime)
 
 void shutdownGraphics(void)
 {
+    glDeleteVertexArrays(1, &vertexArrayObject);
+    glDeleteProgram(renderingProgram);
     glfwTerminate();
 }
