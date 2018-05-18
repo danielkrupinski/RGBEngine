@@ -2,6 +2,7 @@
 #define RGBE_GRAPHICS_H
 
 #include "glad.h"
+#include "shader.h"
 #include "window.h"
 
 void initializeGraphics(void);
