@@ -80,6 +80,7 @@ GLuint graphicsCompileShaders(void)
 
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
+    glDeleteShader(tessellationControlShader);
 
     return program;
 }
