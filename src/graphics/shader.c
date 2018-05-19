@@ -50,13 +50,32 @@ GLuint graphicsCompileShaders(void)
         "}                                                                                 \n"
     };
 
-    GLuint tessellationControlShader = glCreateShader(GL_TESS_CONTROL);
+    GLuint tessellationControlShader = glCreateShader(GL_TESS_CONTROL_SHADER);
     glShaderSource(tessellationControlShader, 1, tessellationControlShaderSource, NULL);
     glCompileShader(tessellationControlShader);
+
+    static const GLchar* tessellationEvaluationShaderSource[] = {
+        "#version 460 core                                                      \n"
+        "                                                                       \n"
+        "layout (triangles, equal_spacing, cw) in;                              \n"
+        "                                                                       \n"
+        "void main(void)                                                        \n"
+        "{                                                                      \n"
+        "    gl_Position = (gl_TessCoord.x * gl_in[0].gl_Position) +            \n"
+        "                  (gl_TessCoord.y * gl_in[1].gl_Position) +            \n"
+        "                  (gl_TessCoord.z * gl_in[2].gl_Position);             \n"
+        "}                                                                      \n"
+    };
+
+    GLuint tessellationEvaluationShader = glCreateShader(GL_TESS_EVALUATION_SHADER);
+    glShaderSource(tessellationEvaluationShader, 1, tessellationEvaluationShaderSource, NULL);
+    glCompileShader(tessellationEvaluationShader);
 
     GLuint program = glCreateProgram();
     glAttachShader(program, vertexShader);
     glAttachShader(program, fragmentShader);
+    glAttachShader(program, tessellationControlShader);
+    glAttachShader(program, tessellationEvaluationShader);
     glLinkProgram(program);
 
     glDeleteShader(vertexShader);
