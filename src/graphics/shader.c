@@ -33,7 +33,7 @@ GLuint graphicsCompileShaders(void)
     glShaderSource(fragmentShader, 1, fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
 
-    static const GLchar* tessellationShaderSource[] = {
+    static const GLchar* tessellationControlShaderSource[] = {
         "#version 460 core                                                                 \n"
         "                                                                                  \n"
         "layout (vertices = 3) out;                                                        \n"
@@ -49,6 +49,10 @@ GLuint graphicsCompileShaders(void)
         "    gl_out[gl_InvocationID].gl_Position = gl_in[gl_InvocationID].gl_Position;     \n"
         "}                                                                                 \n"
     };
+
+    GLuint tessellationControlShader = glCreateShader(GL_TESS_CONTROL);
+    glShaderSource(tessellationControlShader, 1, tessellationControlShaderSource, NULL);
+    glCompileShader(tessellationControlShader);
 
     GLuint program = glCreateProgram();
     glAttachShader(program, vertexShader);
