@@ -14,6 +14,10 @@ GLuint graphicsCompileShaders(void)
         "}                                                                      \n"
     };
 
+    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertexShader, 1, vertexShaderSource, NULL);
+    glCompileShader(vertexShader);
+
     static const GLchar* fragmentShaderSource[] = {
         "#version 460 core                          \n"
         "                                           \n"
@@ -24,10 +28,6 @@ GLuint graphicsCompileShaders(void)
         "   color = vec4(0.0, 0.8, 1.0, 1.0);       \n"
         "}                                          \n"
     };
-
-    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
 
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, fragmentShaderSource, NULL);
