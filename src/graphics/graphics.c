@@ -23,7 +23,7 @@ void renderGraphics(double currentTime)
         const GLfloat color[] = { 0.0f, 0.2f, 0.0f, 1.0f };
         glClearBufferfv(GL_COLOR, 0, color);
         glUseProgram(renderingProgram);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_PATCHES, 0, 3);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
