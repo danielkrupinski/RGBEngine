@@ -5,7 +5,7 @@
 #include "shader.h"
 #include "window.h"
 
-void initializeGraphics(void);
+void initGraphics(void);
 
 void renderGraphics(double);
 

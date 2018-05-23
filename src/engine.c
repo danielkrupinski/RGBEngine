@@ -5,7 +5,7 @@ bool isRunning;
 
 void initEngine(void)
 {
-    initializeGraphics();
+    initGraphics();
     isRunning = true;
 }
 

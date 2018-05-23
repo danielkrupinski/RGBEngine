@@ -7,7 +7,7 @@ extern bool isRunning;
 GLuint renderingProgram;
 GLuint vertexArrayObject;
 
-void initializeGraphics(void)
+void initGraphics(void)
 {
     graphicsCreateWindow();
     graphicsInitializeGlad();
