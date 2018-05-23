@@ -1,7 +1,7 @@
 #ifndef RGBE_ENGINE_H
 #define RGBE_ENGINE_H
 
-#include "graphics/graphics.h"
+#include "gfx/graphics.h"
 
 void initializeEngine(void);
 void runEngine(void);

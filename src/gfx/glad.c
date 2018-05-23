@@ -1,7 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stdio.h>
-#include "graphics/glad.h"
+#include "gfx/glad.h"
 
 void graphicsInitializeGlad(void)
 {

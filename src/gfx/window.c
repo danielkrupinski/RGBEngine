@@ -2,7 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "graphics/window.h"
+#include "gfx/window.h"
 
 void graphicsCreateWindow(void)
 {
@@ -20,7 +20,7 @@ void graphicsCreateWindow(void)
     }
 
     glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, graphicsResizeWindow); 
+    glfwSetFramebufferSizeCallback(window, graphicsResizeWindow);
 }
 
 void graphicsResizeWindow(GLFWwindow* window, int width, int height)

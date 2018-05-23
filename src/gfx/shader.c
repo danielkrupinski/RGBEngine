@@ -1,4 +1,4 @@
-#include "graphics/shader.h"
+#include "gfx/shader.h"
 
 GLuint graphicsCompileShaders(void)
 {
@@ -84,6 +84,6 @@ GLuint graphicsCompileShaders(void)
     glDeleteShader(tessellationEvaluationShader);
 
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    
+
     return program;
 }
