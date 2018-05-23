@@ -37,3 +37,9 @@ void shutdownGraphics(void)
     glDeleteProgram(renderingProgram);
     glfwTerminate();
 }
+
+void graphicsInitializeGlad(void)
+{
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+        fprintf(stderr, "Failed to initialize GLAD!\n");
+}
