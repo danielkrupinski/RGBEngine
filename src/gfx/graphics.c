@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include <math.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "gfx/graphics.h"
 
 extern bool isRunning;
