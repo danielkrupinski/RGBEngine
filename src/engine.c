@@ -3,7 +3,7 @@
 
 bool isRunning;
 
-void initializeEngine(void)
+void initEngine(void)
 {
     initializeGraphics();
     isRunning = true;
