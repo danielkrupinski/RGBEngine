@@ -5,6 +5,6 @@ int main(void)
 {
     _mm_setcsr(_mm_getcsr() | 0x8040);
     rgbeInit();
-    runEngine();
+    rgbeRun();
     return 0;
 }

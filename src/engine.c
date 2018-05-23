@@ -9,7 +9,7 @@ void rgbeInit(void)
     isRunning = true;
 }
 
-void runEngine(void)
+void rgbeRun(void)
 {
     while (isRunning) {
         renderGraphics(glfwGetTime());
