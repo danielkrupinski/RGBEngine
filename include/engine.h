@@ -3,7 +3,7 @@
 
 #include "gfx/graphics.h"
 
-void initEngine(void);
+void rgbeInit(void);
 void runEngine(void);
 
 #endif // RGBE_ENGINE_H

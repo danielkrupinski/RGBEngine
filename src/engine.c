@@ -3,7 +3,7 @@
 
 bool isRunning;
 
-void initEngine(void)
+void rgbeInit(void)
 {
     initGraphics();
     isRunning = true;
