@@ -53,5 +53,5 @@ void rgbeResizeWindow(GLFWwindow* window, int width, int height)
 
 void rgbeShutdownGraphics(void)
 {
-
+    glfwTerminate();
 }

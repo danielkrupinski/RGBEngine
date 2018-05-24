@@ -15,4 +15,5 @@ void rgbeRunEngine(void)
     while (isRunning) {
         rgbeRenderGraphics();
     }
+    rgbeShutdownGraphics();
 }
