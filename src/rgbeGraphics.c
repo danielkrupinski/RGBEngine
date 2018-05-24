@@ -38,10 +38,20 @@ void rgbeInitGraphics(void)
 
 void rgbeRenderGraphics(void)
 {
-
+    if (!glfwWindowShouldClose(window)) {
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+    else
+        isRunning = false;
 }
 
 void rgbeResizeWindow(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
+}
+
+void rgbeShutdownGraphics(void)
+{
+
 }

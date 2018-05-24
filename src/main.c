@@ -2,5 +2,7 @@
 
 int main(void)
 {
+    rgbeInitEngine();
+    rgbeRunEngine();
     return 0;
 }

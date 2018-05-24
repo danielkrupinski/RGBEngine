@@ -12,5 +12,7 @@ void rgbeInitEngine(void)
 
 void rgbeRunEngine(void)
 {
-
+    while (isRunning) {
+        rgbeRenderGraphics();
+    }
 }
