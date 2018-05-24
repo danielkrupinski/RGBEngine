@@ -30,4 +30,8 @@ void rgbeInitGraphics(void)
         glfwTerminate();
         exit(1);
     }
+
+    glViewport(0, 0, 800, 600);
+
+    
 }
