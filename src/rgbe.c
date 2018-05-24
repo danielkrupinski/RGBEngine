@@ -1,5 +1,6 @@
 #include <rgbe.h>
 #include <rgbeGraphics.h>
+#include <rgbeInput.h>
 #include <stdbool.h>
 
 bool isRunning = false;
