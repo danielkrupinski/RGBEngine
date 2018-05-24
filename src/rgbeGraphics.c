@@ -22,5 +22,12 @@ void rgbeInitGraphics(void)
         glfwTerminate();
         exit(1);
     }
+
     glfwMakeContextCurrent(window);
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        printf("Failed to initialize GLAD!\n");
+        glfwTerminate();
+        exit(1);
+    }
 }
