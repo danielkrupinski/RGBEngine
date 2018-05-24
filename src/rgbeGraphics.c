@@ -33,5 +33,10 @@ void rgbeInitGraphics(void)
 
     glViewport(0, 0, 800, 600);
 
-    
+
+}
+
+void rgbeResizeWindow(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
 }
