@@ -1,12 +1,15 @@
 #include <rgbe.h>
 #include <rgbeGraphics.h>
+#include <stdbool.h>
 
-void rgbeInitEngine()
+bool isRunning = false;
+
+void rgbeInitEngine(void)
 {
     rgbeInitGraphics();
 }
 
-void rgbeRunEngine()
+void rgbeRunEngine(void)
 {
-    
+
 }
