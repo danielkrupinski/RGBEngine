@@ -36,6 +36,11 @@ void rgbeInitGraphics(void)
     glfwSetFramebufferSizeCallback(window, rgbeResizeWindow);
 }
 
+void rgbeRenderGraphics(void)
+{
+
+}
+
 void rgbeResizeWindow(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);

@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 
 void rgbeInitGraphics(void);
+void rgbeRenderGraphics(void);
 void rgbeResizeWindow(GLFWwindow*, int, int);
 
 #endif // RGBE_GRAPHICS_H
