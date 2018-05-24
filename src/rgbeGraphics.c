@@ -1,8 +1,8 @@
 #include <glad/glad.h>
 #include <rgbeGraphics.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 GLFWwindow* window;
 extern bool isRunning;
