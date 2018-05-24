@@ -1,5 +1,5 @@
 #include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include <rgbeGraphics.h>
 #include <stdlib.h>
 
 GLFWwindow* window;
