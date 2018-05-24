@@ -7,6 +7,7 @@ bool isRunning = false;
 void rgbeInitEngine(void)
 {
     rgbeInitGraphics();
+    isRunning = true;
 }
 
 void rgbeRunEngine(void)
