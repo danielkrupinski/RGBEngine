@@ -1,8 +1,11 @@
 #include <glad/glad.h>
 #include <rgbeGraphics.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 GLFWwindow* window;
+extern bool isRunning;
 
 void rgbeInitGraphics(void)
 {
@@ -39,6 +42,8 @@ void rgbeInitGraphics(void)
 void rgbeRenderGraphics(void)
 {
     if (!glfwWindowShouldClose(window)) {
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

@@ -13,6 +13,7 @@ void rgbeInitEngine(void)
 void rgbeRunEngine(void)
 {
     while (isRunning) {
+        rgbeProcessInput();
         rgbeRenderGraphics();
     }
     rgbeShutdownGraphics();
