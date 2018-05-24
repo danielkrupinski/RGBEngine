@@ -20,8 +20,7 @@ void rgbeInitGraphics(void)
     if (!window) {
         printf("Failed to create GLFW window!\n");
         glfwTerminate();
-        return 1;
+        exit(1);
     }
-    
     glfwMakeContextCurrent(window);
 }
