@@ -5,3 +5,8 @@ void rgbeInitEngine()
 {
     rgbeInitGraphics();
 }
+
+void rgbeRunEngine()
+{
+    
+}
