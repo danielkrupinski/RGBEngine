@@ -7,6 +7,7 @@ void rgbeInitGraphics(void);
 void rgbeRenderGraphics(void);
 void rgbeShutdownGraphics(void);
 
+static void rgbeCompileShader(void);
 static void rgbeResizeWindow(GLFWwindow*, int, int);
 
 #endif // RGBE_GRAPHICS_H
