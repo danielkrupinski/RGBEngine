@@ -55,12 +55,12 @@ void rgbeRenderGraphics(void)
         isRunning = false;
 }
 
-static void rgbeResizeWindow(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
-
 void rgbeShutdownGraphics(void)
 {
     glfwTerminate();
+}
+
+static void rgbeResizeWindow(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
 }
