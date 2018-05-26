@@ -10,6 +10,7 @@ GLFWwindow* window;
 
 static unsigned int vbo;
 static unsigned int vao;
+static unsigned int shaderProgram;
 
 void rgbeInitGraphics(void)
 {
@@ -99,7 +100,7 @@ static void rgbeCompileShader(void)
         printf("ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n%s\n", infoLog);
     }
 
-    unsigned int shaderProgram = glCreateProgram();
+    shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
