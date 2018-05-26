@@ -4,8 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-GLFWwindow* window;
 extern bool isRunning;
+
+GLFWwindow* window;
+
+static unsigned int vbo;
+static unsigned int vao;
 
 void rgbeInitGraphics(void)
 {
