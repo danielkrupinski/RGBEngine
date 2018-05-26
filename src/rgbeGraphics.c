@@ -39,7 +39,7 @@ void rgbeInitGraphics(void)
     glfwSetFramebufferSizeCallback(window, rgbeResizeWindow);
 }
 
-static void rgbeRenderGraphics(void)
+void rgbeRenderGraphics(void)
 {
     if (!glfwWindowShouldClose(window)) {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -51,12 +51,12 @@ static void rgbeRenderGraphics(void)
         isRunning = false;
 }
 
-void rgbeResizeWindow(GLFWwindow* window, int width, int height)
+static void rgbeResizeWindow(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
 
-void rgbeShutdownGraphics(void)
+static void rgbeShutdownGraphics(void)
 {
     glfwTerminate();
 }
