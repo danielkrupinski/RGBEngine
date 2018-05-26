@@ -57,6 +57,8 @@ void rgbeRenderGraphics(void)
 
 void rgbeShutdownGraphics(void)
 {
+    glDeleteVertexArrays(1, &vao);
+    glDeleteBuffers(1, &vbo);
     glfwTerminate();
 }
 
