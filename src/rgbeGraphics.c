@@ -18,7 +18,7 @@ void rgbeInitGraphics(void)
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     #endif
 
-    window = glfwCreateWindow(800, 600, "OpenGL 4.6 Window", NULL, NULL);
+    window = glfwCreateWindow(800, 600, "RGBEngine", NULL, NULL);
 
     if (!window) {
         printf("Failed to create GLFW window!\n");
