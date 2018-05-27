@@ -10,4 +10,4 @@ set(CMAKE_C_FLAGS_RELEASE "-std=c18 -m64 -Ofast -flto -march=native -funroll-loo
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 add_executable(RGBEngine ${SOURCES})
-target_link_libraries(RGBEngine m glfw GL)
+target_link_libraries(RGBEngine glfw GL)
