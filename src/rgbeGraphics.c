@@ -53,6 +53,9 @@ void rgbeRenderGraphics(void)
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(shaderProgram);
         glBindVertexArray(vao);
+        float greenValue = sin(glfwGetTime()) / 2.0f + 0.5f;
+        int vertexColorLocation = glGetUniformLocation(shaderProgram, "color");
+        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -73,19 +76,17 @@ static void rgbeCompileShader(void)
 {
     const char* vertexShaderSource = "#version 460 core\n"
                                      "layout (location = 0) in vec3 aPos;\n"
-                                     "out vec4 vertexColor;\n"
                                      "void main(void)\n"
                                      "{\n"
                                      "   gl_Position = vec4(aPos, 1.0f);\n"
-                                     "   vertexColor = vec4(0.5f, 0.0f, 0.0f, 1.0f);\n"
                                      "}\0";
 
     const char* fragmentShaderSource = "#version 460 core\n"
                                        "out vec4 fragColor;\n"
-                                       "in vec4 vertexColor;\n"
+                                       "uniform vec4 color;\n"
                                        "void main(void)\n"
                                        "{\n"
-                                       "   fragColor = vertexColor;\n"
+                                       "   fragColor = color;\n"
                                        "}\0";
 
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
