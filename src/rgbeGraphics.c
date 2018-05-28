@@ -1,4 +1,5 @@
 #include <glad/glad.h>
+#include <math.h>
 #include <rgbeGraphics.h>
 #include <stdbool.h>
 #include <stdio.h>
