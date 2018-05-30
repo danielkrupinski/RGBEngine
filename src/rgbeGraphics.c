@@ -132,8 +132,8 @@ static void rgbeCompileShader(void)
     };
 
     unsigned int indices[] = {
-        0, 1, 3,
-        1, 2, 3
+        0, 2, 6,
+        2, 4, 6
     };
 
     glGenVertexArrays(1, &vao);
