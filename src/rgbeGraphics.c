@@ -12,6 +12,8 @@ GLFWwindow* window;
 static unsigned int vbo;
 static unsigned int vao;
 static unsigned int shaderProgram;
+static const char* vertexShaderSource;
+static const char* fragmentShaderSource;
 
 void rgbeInitGraphics(void)
 {
@@ -136,6 +138,35 @@ static void rgbeCompileShader(void)
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
     glUseProgram(shaderProgram);
+}
+
+static void rgbeLoadShader(void)
+{
+    FILE* vertexShaderFile = fopen("vertexShader.vs", "r");
+    if (!vertexShaderFile) {
+        printf("Failed to open vertexShader.vs!\n");
+        exit(1);
+    }
+
+    FILE* fragmentShaderFile = fopen("fragmentShader.fs", "r");
+    if (!fragmeShaderFile) {
+        printf("Failed to open fragmentShader.fs!\n");
+        exit(1);
+    }
+
+    fseek(vertexShaderFile, 0L, SEEK_END);
+    long vertexShaderFileSize = ftell(vertexShaderFile);
+    rewind(vertexShaderFile);
+    vertexShaderSource = malloc(vertexShaderFileSize + 1);
+    fread(vertexShaderSource, vertexShaderFileSize, 1, vertexShaderFile);
+    fclose(vertexShaderFile);
+
+    fseek(fragmentShaderFile, 0L, SEEK_END);
+    long fragmentShaderFileSize = ftell(fragmentShaderFile);
+    rewind(fragmentShaderFile);
+    fragmentShaderSource = malloc(fragmentShaderFileSize + 1);
+    fread(fragmentShaderSource, fragmentShaderFileSize, 1, fragmentShaderFile);
+    fclose(fragmentShaderFile);
 }
 
 static void rgbeResizeWindow(GLFWwindow* window, int width, int height)
