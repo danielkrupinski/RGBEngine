@@ -149,7 +149,7 @@ static void rgbeLoadShader(void)
     }
 
     FILE* fragmentShaderFile = fopen("fragmentShader.fs", "r");
-    if (!fragmeShaderFile) {
+    if (!fragmentShaderFile) {
         printf("Failed to open fragmentShader.fs!\n");
         exit(1);
     }
