@@ -67,24 +67,6 @@ void rgbeShutdownGraphics(void)
 
 static void rgbeCompileShader(void)
 {
-    const char* vertexShaderSource = "#version 460 core\n"
-                                     "layout (location = 0) in vec3 aPos;\n"
-                                     "layout (location = 1) in vec3 aColor;\n"
-                                     "out vec3 ourColor;\n"
-                                     "void main(void)\n"
-                                     "{\n"
-                                     "   gl_Position = vec4(aPos, 1.0f);\n"
-                                     "   ourColor = aColor;\n"
-                                     "}\0";
-
-    const char* fragmentShaderSource = "#version 460 core\n"
-                                       "out vec4 fragColor;\n"
-                                       "in vec3 ourColor;\n"
-                                       "void main(void)\n"
-                                       "{\n"
-                                       "   fragColor = vec4(ourColor, 1.0f);\n"
-                                       "}\0";
-
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
