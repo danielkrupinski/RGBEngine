@@ -5,8 +5,8 @@ set(CMAKE_BUILD_TYPE Release)
 
 include_directories(include)
 file(GLOB_RECURSE SOURCES "src/*.c")
-add_executable(RGBEngine ${SOURCES})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+add_executable(RGBEngine ${SOURCES})
 
 if(UNIX)
     if(APPLE)
