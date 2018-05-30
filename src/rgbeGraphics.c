@@ -87,10 +87,10 @@ static void rgbeCompileShader(void)
 
     const char* fragmentShaderSource = "#version 460 core\n"
                                        "out vec4 fragColor;\n"
-                                       "uniform vec4 color;\n"
+                                       "in vec3 ourColor;\n"
                                        "void main(void)\n"
                                        "{\n"
-                                       "   fragColor = color;\n"
+                                       "   fragColor = vec4(ourColor, 1.0f);\n"
                                        "}\0";
 
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
