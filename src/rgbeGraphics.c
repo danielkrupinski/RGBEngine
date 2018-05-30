@@ -47,9 +47,8 @@ void rgbeRenderGraphics(void)
     if (!glfwWindowShouldClose(window)) {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        glUseProgram(shaderProgram);
         glBindVertexArray(vao);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
@@ -61,7 +60,6 @@ void rgbeShutdownGraphics(void)
 {
     glDeleteVertexArrays(1, &vao);
     glDeleteBuffers(1, &vbo);
-    glDeleteBuffers(1, &ebo);
     glfwTerminate();
 }
 
@@ -121,10 +119,9 @@ static void rgbeCompileShader(void)
     glDeleteShader(fragmentShader);
 
     float vertices[] = {
-         0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f,
-         0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,
-        -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,
-        -0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f
+         0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,
+        -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,
+         0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f
     };
 
     glGenVertexArrays(1, &vao);
@@ -138,6 +135,7 @@ static void rgbeCompileShader(void)
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
+    glUseProgram(shaderProgram);
 }
 
 static void rgbeResizeWindow(GLFWwindow* window, int width, int height)
