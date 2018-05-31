@@ -41,6 +41,7 @@ void rgbeInitGraphics(void)
     glViewport(0, 0, 800, 600);
 
     glfwSetFramebufferSizeCallback(window, rgbeResizeWindow);
+    rgbeLoadShader();
     rgbeCompileShader();
 }
 
