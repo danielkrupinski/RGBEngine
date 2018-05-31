@@ -139,14 +139,14 @@ static void rgbeLoadShader(void)
     fseek(vertexShaderFile, 0L, SEEK_END);
     long vertexShaderFileSize = ftell(vertexShaderFile);
     rewind(vertexShaderFile);
-    vertexShaderSource = malloc(vertexShaderFileSize + 1);
+    vertexShaderSource = calloc(vertexShaderFileSize + 1, 1);
     fread(vertexShaderSource, vertexShaderFileSize, 1, vertexShaderFile);
     fclose(vertexShaderFile);
 
     fseek(fragmentShaderFile, 0L, SEEK_END);
     long fragmentShaderFileSize = ftell(fragmentShaderFile);
     rewind(fragmentShaderFile);
-    fragmentShaderSource = malloc(fragmentShaderFileSize + 1);
+    fragmentShaderSource = calloc(fragmentShaderFileSize + 1, 1);
     fread(fragmentShaderSource, fragmentShaderFileSize, 1, fragmentShaderFile);
     fclose(fragmentShaderFile);
 }
