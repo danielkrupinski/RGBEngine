@@ -1,5 +1,4 @@
 #include <glad/glad.h>
-#include <math.h>
 #include <rgbeGraphics.h>
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -153,7 +152,7 @@ static void rgbeCompileShader(void)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     stbi_set_flip_vertically_on_load(true);
-    
+
     int width, height, nrChannels;
     unsigned char* data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
 
