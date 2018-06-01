@@ -14,6 +14,7 @@ static unsigned int vbo;
 static unsigned int vao;
 static unsigned int ebo;
 static unsigned int shaderProgram;
+static unsigned int texture;
 static const char* vertexShaderSource;
 static const char* fragmentShaderSource;
 
@@ -136,8 +137,29 @@ static void rgbeCompileShader(void)
 
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     glEnableVertexAttribArray(2);
-    
+
     glUseProgram(shaderProgram);
+
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    int width, height, nrChannels;
+    unsigned char* data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+
+    if (data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else {
+        printf("Failed to load texture!\n");
+        exit(1);
+    }
+    stbi_image_free(data);
 }
 
 static void rgbeLoadShader(void)
