@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include <math.h>
 #include <rgbeGraphics.h>
+#include <stb_image.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
