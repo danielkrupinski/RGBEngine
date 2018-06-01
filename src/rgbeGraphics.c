@@ -55,7 +55,10 @@ void rgbeRenderGraphics(void)
     if (!glfwWindowShouldClose(window)) {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+        glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
         glBindVertexArray(vao);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glfwSwapBuffers(window);
@@ -141,8 +144,6 @@ static void rgbeCompileShader(void)
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     glEnableVertexAttribArray(2);
 
-    glUseProgram(shaderProgram);
-
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
 
@@ -183,6 +184,10 @@ static void rgbeCompileShader(void)
         exit(1);
     }
     stbi_image_free(data);
+
+    glUseProgram(shaderProgram);
+    glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0);
+    glUniform1i(glGetUniformLocation(shaderProgram, "texture2"), 1);
 }
 
 static void rgbeLoadShader(void)
