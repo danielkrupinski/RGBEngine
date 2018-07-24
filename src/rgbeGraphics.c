@@ -19,61 +19,6 @@ static unsigned int texture2;
 static const char* vertexShaderSource;
 static const char* fragmentShaderSource;
 
-void rgbeInitGraphics(void)
-{
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    window = glfwCreateWindow(800, 600, "RGBEngine", NULL, NULL);
-
-    if (!window) {
-        printf("Failed to create GLFW window!\n");
-        glfwTerminate();
-        exit(1);
-    }
-
-    glfwMakeContextCurrent(window);
-
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-        printf("Failed to initialize GLAD!\n");
-        glfwTerminate();
-        exit(1);
-    }
-
-    glViewport(0, 0, 800, 600);
-
-    glfwSetFramebufferSizeCallback(window, rgbeResizeWindow);
-    rgbeLoadShader();
-    rgbeCompileShader();
-}
-
-void rgbeRenderGraphics(void)
-{
-    if (!glfwWindowShouldClose(window)) {
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
-        glBindVertexArray(vao);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-    else
-        isRunning = false;
-}
-
-void rgbeShutdownGraphics(void)
-{
-    glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &vbo);
-    glfwTerminate();
-}
-
 static void rgbeCompileShader(void)
 {
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -223,4 +168,59 @@ static void rgbeLoadShader(void)
 static void rgbeResizeWindow(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
+}
+
+void rgbeInitGraphics(void)
+{
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    window = glfwCreateWindow(800, 600, "RGBEngine", NULL, NULL);
+
+    if (!window) {
+        printf("Failed to create GLFW window!\n");
+        glfwTerminate();
+        exit(1);
+    }
+
+    glfwMakeContextCurrent(window);
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        printf("Failed to initialize GLAD!\n");
+        glfwTerminate();
+        exit(1);
+    }
+
+    glViewport(0, 0, 800, 600);
+
+    glfwSetFramebufferSizeCallback(window, rgbeResizeWindow);
+    rgbeLoadShader();
+    rgbeCompileShader();
+}
+
+void rgbeRenderGraphics(void)
+{
+    if (!glfwWindowShouldClose(window)) {
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+        glBindVertexArray(vao);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+    else
+        isRunning = false;
+}
+
+void rgbeShutdownGraphics(void)
+{
+    glDeleteVertexArrays(1, &vao);
+    glDeleteBuffers(1, &vbo);
+    glfwTerminate();
 }
