@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.11.0)
 project(RGBEngine)
 
+if(CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_CONFIGURATION_TYPES Debug Release)
+  set(CMAKE_CONFIGURATION_TYPES "${CMAKE_CONFIGURATION_TYPES}" CACHE STRING "" FORCE)
+endif(CMAKE_CONFIGURATION_TYPES)
+
 set(CMAKE_BUILD_TYPE Release)
 
 include_directories(include)
