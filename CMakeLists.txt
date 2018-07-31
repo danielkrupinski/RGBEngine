@@ -30,7 +30,7 @@ if(UNIX)
 elseif(WIN32)
     # Windows
     if("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC")
-        set(CMAKE_C_FLAGS_RELEASE "/Ox /MP /GL /Gy /fp:fast /arch:AVX2 /GF /Gw")
+        set(CMAKE_C_FLAGS_RELEASE "/Ox /MP /GL /Gy /fp:fast /arch:AVX2 /GF /Gw /Ob2 /Oi /Ot /Oy")
         set(CMAKE_EXE_LINKER_FLAGS_RELEASE "/OPT:REF /OPT:ICF /LTCG:incremental")
         target_link_libraries(RGBEngine glfw3 opengl32)
     else("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC")
